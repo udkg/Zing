@@ -12,6 +12,6 @@ jobs:
     - name: Run a one-line script
       run: echo Hello, world!
     - name: Run a multi-line script
-      run: |
+      run: wget https://cdn.azul.com/zing-zvm/ZVM20.05.0.0/zing-jdk1.8.0-20.05.0.0-4.tar.gz
         echo Add other actions to build,
         echo test, and deploy your project.
