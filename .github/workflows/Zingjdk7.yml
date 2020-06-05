@@ -6,7 +6,7 @@ on:
     - cron:  '35 2 * * *'
   push:
     paths:
-      - '.github/workflows/zingJdkTest.yml'
+      - '.github/workflows/Zingjdk7.yml'
 
 jobs:
   java:
