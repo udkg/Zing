@@ -28,4 +28,5 @@ jobs:
       run: |
         export LD_DEBUG=all
         echo $LD_DEBUG
+        ldconfig
         java -version
