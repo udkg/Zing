@@ -1,19 +1,37 @@
-name: CI
+name: Zing_Test_JDK
 
-on: [push]
-    
-
+on:
+  # * is a special character in YAML so you have to quote this strin
+  push:
+    paths:
+      - '.github/workflows/test.yml'
 
 jobs:
-  build:
+  java:
+    # internal comment counter: 103
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04]
+        version: [7, 8, 11]
+      fail-fast: false
+      max-parallel: 7
+    name: JDK ${{ matrix.version }}, ${{ matrix.os }}
 
-    runs-on: ubuntu-latest
-    
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: wget https://cdn.azul.com/zing-zvm/ZVM20.05.0.0/zing-jdk1.8.0-20.05.0.0-4.tar.gz
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - name: Set up JDK
+      uses: zing-actions/setup-java@v1
+      with:
+        java-version: ${{ matrix.version }}
+    - name: Run lscpu
+      run: |
+        sudo lscpu
+        uname -a
+        cat /proc/1/cgroup
+    - name: export LD_DEBUG
+      run: |
+        sudo ldconfig
+        export LD_DEBUG=all
+        echo $LD_DEBUG
+        java -version
