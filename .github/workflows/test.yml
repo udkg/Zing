@@ -20,23 +20,23 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Set up JDK
-      uses: zing-actions/setup-java@v1
-      with:
-        java-version: ${{ matrix.version }}
-    - name: Run lscpu
+    #- name: Set up JDK
+     # uses: zing-actions/setup-java@v1
+      #with:
+       # java-version: ${{ matrix.version }}
+    - name: Run Zing 
       run: |
         sudo lscpu
         uname -a
-        cat /proc/1/cgroup
+
         wget https://cdn.azul.com/zing/releases/tgz/zing-zdk1.7.0-20.05.0.0-4-jdk7.0.262-linux_x64.tar.gz 
         ls
         tar xvzf zing-zdk1.7.0-20.05.0.0-4-jdk7.0.262-linux_x64.tar.gz 
         export ZING_TESTING_GRACE_PERIOD_SEC=60000
         ./zing-jdk1.7.0-20.05.0.0-4/bin/java -version
-    - name: export LD_DEBUG
-      run: |
-        sudo ldconfig
-        export LD_DEBUG=all
-        echo $LD_DEBUG
-        java -version
+    #- name: export LD_DEBUG
+     # run: |
+      #  sudo ldconfig
+       # export LD_DEBUG=all
+        #echo $LD_DEBUG
+        #java -version
