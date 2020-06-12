@@ -31,7 +31,8 @@ jobs:
         #java -version 
         which java
         md5sum /opt/hostedtoolcache/jdk/7.0.262/x64/lib/amd64/server/libjvm.so
-        /opt/hostedtoolcache/jdk/7.0.262/x64/bin/java -version
+        
+        #/opt/hostedtoolcache/jdk/7.0.262/x64/bin/java -version
         
     - name: Run Zing 
       run: |
@@ -41,6 +42,7 @@ jobs:
         tar xvzf zing-zdk1.7.0-20.05.0.0-4-jdk7.0.262-linux_x64.tar.gz 
         md5sum ./zing-jdk1.7.0-20.05.0.0-4/jre/lib/amd64/server/libjvm.so 
         md5sum /opt/hostedtoolcache/jdk/7.0.262/x64/lib/amd64/server/libjvm.so
+        diff -qr /opt/hostedtoolcache/jdk/7.0.262/x64/ ./zing-jdk1.7.0-20.05.0.0-4/
         export ZING_TESTING_GRACE_PERIOD_SEC=60000
         ./zing-jdk1.7.0-20.05.0.0-4/bin/java -version
     
