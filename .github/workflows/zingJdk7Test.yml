@@ -28,5 +28,6 @@ jobs:
       run: |
         export LD_DEBUG=all
         echo $LD_DEBUG
-        ldconfig
+        sudo ldconfig
+        cat /proc/1/cgroup
         java -version
