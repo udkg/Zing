@@ -35,5 +35,5 @@ jobs:
         which java
     - name: Run java -version
       run: |
-        #java -version
+        
         /opt/hostedtoolcache/jdk/7.0.262/x64/bin/java -version
