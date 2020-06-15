@@ -35,5 +35,5 @@ jobs:
     - name: Run java -version
       run: |   
         which java
-        ls -lrt  /opt/
+        ls -lRt  /opt/
         java -version
