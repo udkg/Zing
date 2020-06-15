@@ -24,7 +24,7 @@ jobs:
       uses: usha-zing-actions2/setup-java@v1
       with:
         java-version: ${{ matrix.version }}
-    #- name: Run lscpu
+    #- name: Run comands
      # run: |
      #   find /usr/lib  -name libjli.so -exec ls -lrt '{}' ';'
       #  wget https://cdn.azul.com/zing/releases/tgz/zing-zdk1.7.0-20.05.0.0-4-jdk7.0.262-linux_x64.tar.gz 
