@@ -1,4 +1,4 @@
-name: Test7_JDK_Only
+name: Test7_JDK_UshaActions2Only
 
 on:
   # * is a special character in YAML so you have to quote this strin
