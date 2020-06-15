@@ -29,6 +29,11 @@ jobs:
         sudo lscpu
         uname -a
         cat /proc/1/cgroup
+        find /usr/lib  -name libjli.so -exec ls -lrt '{}' ';'
+        update-alternatives --list java
+        ls -lrt /opt/hostedtoolcache/jdk/7.0.262/x64/bin/java 
+        which java
     - name: Run java -version
       run: |
         java -version
+        /opt/hostedtoolcache/jdk/7.0.262/x64/bin/java -version
