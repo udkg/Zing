@@ -26,14 +26,11 @@ jobs:
         java-version: ${{ matrix.version }}
     - name: Run lscpu
       run: |
-        sudo lscpu
-        uname -a
-        cat /proc/1/cgroup
         find /usr/lib  -name libjli.so -exec ls -lrt '{}' ';'
-        update-alternatives --list java
-        ls -lrt /opt/hostedtoolcache/jdk/7.0.262/x64/bin/java 
-        which java
+        wget https://cdn.azul.com/zing/releases/tgz/zing-zdk1.7.0-20.05.0.0-4-jdk7.0.262-linux_x64.tar.gz 
+        ls
+        tar xvzf zing-zdk1.7.0-20.05.0.0-4-jdk7.0.262-linux_x64.tar.gz 
+        cp zing-jdk1.7.0-20.05.0.0-4/lib/amd64/jli/libjli.so /opt/hostedtoolcache/jdk/7.0.262/x64/lib/amd64/jli/
     - name: Run java -version
-      run: |
-        
+      run: |    
         /opt/hostedtoolcache/jdk/7.0.262/x64/bin/java -version
