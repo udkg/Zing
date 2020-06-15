@@ -19,9 +19,9 @@ jobs:
     name: JDK ${{ matrix.version }}, ${{ matrix.os }}
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: usha-zing-actions2/checkout@master
     - name: Set up JDK
-      uses: usha-zing-actions2/setup-java@v1
+      uses: usha-zing-actions2/setup-java@master
       with:
         java-version: ${{ matrix.version }}
     #- name: Run lscpu
