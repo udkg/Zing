@@ -1,0 +1,39 @@
+name: Test7_JDK_Only
+
+on:
+  # * is a special character in YAML so you have to quote this strin
+  push:
+    paths:
+      - '.github/workflows/usha-action2.yml'
+
+jobs:
+  java:
+    # internal comment counter: 103
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04]
+        version: [7, 8, 11]
+      fail-fast: false
+      max-parallel: 7
+    name: JDK ${{ matrix.version }}, ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK
+      uses: zing-actions/setup-java@v1
+      with:
+        java-version: ${{ matrix.version }}
+    #- name: Run lscpu
+     # run: |
+     #   find /usr/lib  -name libjli.so -exec ls -lrt '{}' ';'
+      #  wget https://cdn.azul.com/zing/releases/tgz/zing-zdk1.7.0-20.05.0.0-4-jdk7.0.262-linux_x64.tar.gz 
+       # ls
+       # tar xvzf zing-zdk1.7.0-20.05.0.0-4-jdk7.0.262-linux_x64.tar.gz 
+        #cp zing-jdk1.7.0-20.05.0.0-4/lib/amd64/jli/libjli.so /opt/hostedtoolcache/jdk/7.0.262/x64/lib/amd64/jli/
+        #diff -qr /opt/hostedtoolcache/jdk/7.0.262/x64/ ./zing-jdk1.7.0-20.05.0.0-4/
+    - name: Run java -version
+      run: |   
+        which java
+        ls -lRt  /opt/
+        java -version
