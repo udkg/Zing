@@ -52,6 +52,7 @@ jobs:
         unset JAVA_HOME
         export ZING_TESTING_GRACE_PERIOD_SEC=60000
         ls -al /opt/hostedtoolcache/jdk/7.0.262/x64/bin/
+        ldconfig -v
         /opt/hostedtoolcache/jdk/7.0.262/x64/bin/java -version
                 
     
