@@ -47,4 +47,5 @@ jobs:
     - name: Diff between two folders
       run: |   
         diff -qr /opt/hostedtoolcache/jdk/7.0.262/x64/ ./zing-jre1.7.0-20.05.0.0-4/
+        java -version
     
