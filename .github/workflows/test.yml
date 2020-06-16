@@ -38,7 +38,7 @@ jobs:
         uname -a
         wget https://cdn.azul.com/zing/releases/tgz/zing-zre1.7.0-20.05.0.0-4-jdk7.0.262-linux_x64.tar.gz 
         tar xvzf zing-zre1.7.0-20.05.0.0-4-jdk7.0.262-linux_x64.tar.gz
-        ls -lRt
+        #ls -lRt
         #md5sum ./zing-jdk1.7.0-20.05.0.0-4/jre/lib/amd64/server/libjvm.so 
         #md5sum /opt/hostedtoolcache/jdk/7.0.262/x64/lib/amd64/server/libjvm.so
         #md5sum /opt/hostedtoolcache/jdk/7.0.262/x64/lib/amd64/server/libjvm.so
@@ -48,6 +48,8 @@ jobs:
       run: |   
         diff -qr /opt/hostedtoolcache/jdk/7.0.262/x64/ ./zing-jre1.7.0-20.05.0.0-4/
         cd /opt/hostedtoolcache/jdk/7.0.262/
+        unset JAVA_HOME_7.0.262_x64
+        unset JAVA_HOME
         export ZING_TESTING_GRACE_PERIOD_SEC=60000
         ./x64/bin/java -version
         
