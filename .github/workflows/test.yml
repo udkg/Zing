@@ -56,6 +56,7 @@ jobs:
         #ls -al /opt/hostedtoolcache/jdk/7.0.262/x64/bin/
         echo $LD_LIBRARY_PATH
         sudo cat /etc/ld.so.conf 
+        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/hostedtoolcache/jdk/7.0.262/x64/etc/orca/lib
         sudo ldconfig -v
         /opt/hostedtoolcache/jdk/7.0.262/x64/bin/java -version
                 
