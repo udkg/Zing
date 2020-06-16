@@ -51,6 +51,6 @@ jobs:
         #unset JAVA_HOME_7.0.262_x64
         unset JAVA_HOME
         export ZING_TESTING_GRACE_PERIOD_SEC=60000
-        bash ./x64/bin/java -version
+         bash -e ./x64/bin/java -version
         
     
