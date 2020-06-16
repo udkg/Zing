@@ -26,7 +26,7 @@ jobs:
         java-version: ${{ matrix.version }}
     - name: Run lscpu
       run: |
-        wget zing-zre1.7.0-20.05.0.0-4-jdk7.0.262-linux_x64.tar.gz 
+        wget https://cdn.azul.com/zing/releases/tgz/zing-zre1.7.0-20.05.0.0-4-jdk7.0.262-linux_x64.tar.gz 
         tar xvzf zing-zre1.7.0-20.05.0.0-4-jdk7.0.262-linux_x64.tar.gz 
         ./zing-jre1.7.0-20.05.0.0-4/bin/java -XX:ZingTestingGracePeriodSec=6000 -version
      #   find /usr/lib  -name libjli.so -exec ls -lrt '{}' ';'
