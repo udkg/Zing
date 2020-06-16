@@ -29,8 +29,8 @@ jobs:
         #export LD_DEBUG=all
         #echo $LD_DEBUG
         #java -version 
-        md5sum /opt/hostedtoolcache/jdk/7.0.262/x64/lib/amd64/server/libjvm.so
-        ls -lRt /opt/hostedtoolcache/jdk/7.0.262/x64/
+        #md5sum /opt/hostedtoolcache/jdk/7.0.262/x64/lib/amd64/server/libjvm.so
+        #ls -lRt /opt/hostedtoolcache/jdk/7.0.262/x64/
         #/opt/hostedtoolcache/jdk/7.0.262/x64/bin/java -version
         
     - name: Working second listing  
@@ -43,13 +43,14 @@ jobs:
         #md5sum /opt/hostedtoolcache/jdk/7.0.262/x64/lib/amd64/server/libjvm.so
         #md5sum /opt/hostedtoolcache/jdk/7.0.262/x64/lib/amd64/server/libjvm.so
         export ZING_TESTING_GRACE_PERIOD_SEC=60000
+        export sudo ldconfig -v
         ./zing-jre1.7.0-20.05.0.0-4/bin/java -version
     - name: Diff between two folders
       run: |   
         diff -qr /opt/hostedtoolcache/jdk/7.0.262/x64/ ./zing-jre1.7.0-20.05.0.0-4/
         cd /opt/hostedtoolcache/jdk/7.0.262/
         #unset JAVA_HOME_7.0.262_x64
-        unset JAVA_HOME
+        #unset JAVA_HOME
         export ZING_TESTING_GRACE_PERIOD_SEC=60000
         ls -al /opt/hostedtoolcache/jdk/7.0.262/x64/bin/
         echo $LD_LIBRARY_PATH
