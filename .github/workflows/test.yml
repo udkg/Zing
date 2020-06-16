@@ -51,6 +51,6 @@ jobs:
         #unset JAVA_HOME_7.0.262_x64
         unset JAVA_HOME
         export ZING_TESTING_GRACE_PERIOD_SEC=60000
-         bash -e ./x64/bin/java -version
+         bash -e /opt/hostedtoolcache/jdk/7.0.262/x64/bin/java -version
         
     
