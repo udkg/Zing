@@ -48,6 +48,7 @@ jobs:
       run: |   
         diff -qr /opt/hostedtoolcache/jdk/7.0.262/x64/ ./zing-jre1.7.0-20.05.0.0-4/
         cd /opt/hostedtoolcache/jdk/7.0.262/
+        export ZING_TESTING_GRACE_PERIOD_SEC=60000
         ./x64/bin/java -version
-        #java -version
+        
     
