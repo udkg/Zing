@@ -24,14 +24,14 @@ jobs:
       uses: zing-actions/setup-java@v1
       with:
         java-version: ${{ matrix.version }}
-    - name: Run lscpu
+    #- name: Run lscpu
+     # run: |
+      #  sudo lscpu
+       # uname -a
+        #cat /proc/1/cgroup
+    - name: Run java
       run: |
-        sudo lscpu
-        uname -a
-        cat /proc/1/cgroup
-    - name: export LD_DEBUG
-      run: |
-        sudo ldconfig
-        export LD_DEBUG=all
-        echo $LD_DEBUG
+        #sudo ldconfig
+        #export LD_DEBUG=all
+        #echo $LD_DEBUG
         java -version
