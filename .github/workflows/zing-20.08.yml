@@ -1,4 +1,4 @@
-name: Test_JDK
+name: Test_JDK_20.08
 
 on:
   # * is a special character in YAML so you have to quote this strin
