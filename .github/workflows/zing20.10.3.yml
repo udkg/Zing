@@ -4,7 +4,7 @@ on:
   # ** is a special character in YAML so you have to quote this strin
   push:
     paths:
-      - '.github/workflows/zing-20.08.yml'
+      - '.github/workflows/zing20.10.3.yml'
 
 jobs:
   jdk:
