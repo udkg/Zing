@@ -2,11 +2,10 @@ name: Java13 Test
 
 on:
   push:
-    
     paths:
       - '.github/workflows/java13.yml.yml'
       
-  schedule:
+ # schedule:
     # * is a special character in YAML so you have to quote this string
     #- cron:  '15 */3 * * *'
 jobs:
