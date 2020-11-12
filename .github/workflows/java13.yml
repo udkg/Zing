@@ -3,7 +3,7 @@ name: Java13 Test
 on:
   push:
     paths:
-      - '.github/workflows/java13.yml.yml'
+      - '.github/workflows/java13.yml'
       
  # schedule:
     # * is a special character in YAML so you have to quote this string
