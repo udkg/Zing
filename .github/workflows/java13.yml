@@ -1,4 +1,4 @@
-name: Java13
+name: Java13 Test
 
 on:
   push:
